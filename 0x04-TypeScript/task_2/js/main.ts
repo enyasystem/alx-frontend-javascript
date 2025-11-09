@@ -63,3 +63,25 @@ export function createEmployee(salary: number | string): Director | Teacher {
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
+
+// Part 6: isDirector and executeWork
+export function isDirector(employee: Director | Teacher): employee is Director {
+  // Use instanceof to discriminate the runtime class
+  return employee instanceof Director;
+}
+
+export function executeWork(employee: Director | Teacher): string {
+  if (isDirector(employee)) {
+    const res = employee.workDirectorTasks();
+    console.log(res);
+    return res;
+  }
+
+  const res = employee.workTeacherTasks();
+  console.log(res);
+  return res;
+}
+
+// Example usage for task 6
+executeWork(createEmployee(200));
+executeWork(createEmployee(1000));
