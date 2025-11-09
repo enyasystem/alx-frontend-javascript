@@ -27,7 +27,7 @@ export interface Directors extends Teacher {
 // Example director object
 export const director1: Directors = {
     firstName: 'John',
-    lastName: 'Doe',
+    lastName: 'Igiri',
     location: 'London',
     fullTimeEmployee: true,
     numberOfReports: 17,
@@ -47,4 +47,4 @@ export const printTeacher: printTeacherFunction = (
 ): string => `${firstName.charAt(0)}. ${lastName}`;
 
 // Example usage
-console.log(printTeacher('John', 'Doe'));
+console.log(printTeacher('John', 'Igiri'));

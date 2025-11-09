@@ -1,14 +1,14 @@
-//Define the Teacher interface
+// Define the Teacher interface
 interface Teacher {
     readonly firstName: string; // readonly - can't change after initialization
-    readonly lastName: string; // same here also
-    fullTimeEmployee: boolean; //must always exist
+    readonly lastName: string;  // same here also
+    fullTimeEmployee: boolean;  // must always exist
     yearsOfExperience?: number; // Optional
-    location: string;           //must always exist
-    [key: string]: any;         // index signature => allows extra propertities like "contract"
+    location: string;           // must always exist
+    [key: string]: any;         // index signature => allows extra properties like "contract"
 }
 
-//Example object using the interface
+// Example object using the interface
 const teacher3: Teacher = {
     firstName: 'Bernard',
     fullTimeEmployee: false,
@@ -19,15 +19,15 @@ const teacher3: Teacher = {
 
 console.log(teacher3);
 
-// Directors interface extends Teacher and adds numberOfReports
-export interface Directors extends Teacher {
+// Director interface extends Teacher and adds numberOfReports
+export interface Director extends Teacher {
     numberOfReports: number;
 }
 
 // Example director object
-export const director1: Directors = {
+export const director1: Director = {
     firstName: 'John',
-    lastName: 'Doe',
+    lastName: 'Igiri',
     location: 'London',
     fullTimeEmployee: true,
     numberOfReports: 17,
@@ -47,4 +47,4 @@ export const printTeacher: printTeacherFunction = (
 ): string => `${firstName.charAt(0)}. ${lastName}`;
 
 // Example usage
-console.log(printTeacher('John', 'Doe'));
+console.log(printTeacher('John', 'Igiri'));
