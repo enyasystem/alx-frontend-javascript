@@ -53,3 +53,48 @@ export function printTeacher(
 console.log(printTeacher({ firstName: 'John', lastName: 'Igiri' }));
 console.log(printTeacher({ firstName: 'john', lastName: 'doe' }));
 console.log(printTeacher({ firstName: '', lastName: 'Smith' }));
+
+/* ---------------------------
+   StudentClass + interfaces
+   --------------------------- */
+
+/**
+ * Interface describing the instance (the class shape)
+ */
+export interface StudentClassInterface {
+  firstName: string;
+  lastName: string;
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+/**
+ * Interface describing the constructor signature
+ * (a "newable" type that returns StudentClassInterface)
+ */
+export interface StudentClassConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+/**
+ * The class implementing the interfaces
+ */
+export class StudentClass implements StudentClassInterface {
+  // constructor described with public parameters to create properties
+  constructor(public firstName: string, public lastName: string) {}
+
+  // returns the required string
+  workOnHomework(): string {
+    return 'Currently working';
+  }
+
+  // returns the firstName of the student
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+/* Example usage for StudentClass */
+const student: StudentClassInterface = new StudentClass('Alice', 'Johnson');
+console.log(student.workOnHomework()); // "Currently working"
+console.log(student.displayName());    // "Alice"
