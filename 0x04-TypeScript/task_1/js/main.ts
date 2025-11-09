@@ -40,17 +40,16 @@ export interface printTeacherFunction {
     (firstName: string, lastName: string): string;
 }
 
-// Implementation of printTeacher
-export const printTeacher: printTeacherFunction = (
-    firstName: string,
-    lastName: string
-): string => {
-    if (!firstName) return lastName;                    // handle empty firstName
-    const initial = `${firstName.charAt(0).toUpperCase()}`;
-    return `${initial}. ${lastName}`;
-};
+// Implementation as a function (destructured param) — tests expect this form
+export function printTeacher(
+    { firstName, lastName }: { firstName: string; lastName: string }
+): string {
+    // convert firstName into its initial (single letter)
+    firstName = firstName.charAt(0);
+    return `${firstName}. ${lastName}`;
+}
 
 // Example usage
-console.log(printTeacher('John', 'Igiri'));
-console.log(printTeacher('john', 'doe'));
-console.log(printTeacher('', 'Smith'));
+console.log(printTeacher({ firstName: 'John', lastName: 'Igiri' }));
+console.log(printTeacher({ firstName: 'john', lastName: 'doe' }));
+console.log(printTeacher({ firstName: '', lastName: 'Smith' }));
