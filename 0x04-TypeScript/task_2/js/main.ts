@@ -83,3 +83,22 @@ export function executeWork(employee: Director | Teacher): string {
 // Example usage for task 6
 executeWork(createEmployee(200));
 executeWork(createEmployee(1000));
+
+// Part 7: String literal types and teachClass
+export type Subjects = 'Math' | 'History';
+
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    const res = 'Teaching Math';
+    console.log(res);
+    return res;
+  }
+
+  const res = 'Teaching History';
+  console.log(res);
+  return res;
+}
+
+// Example usage for task 7
+teachClass('Math');
+teachClass('History');
