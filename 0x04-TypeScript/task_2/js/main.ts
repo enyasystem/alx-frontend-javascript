@@ -87,7 +87,7 @@ executeWork(createEmployee(1000));
 // Part 7: String literal types and teachClass
 export type Subjects = 'Math' | 'History';
 
-export function teachClass(todayClass: Subjects): string {
+export function teachClass(todayClass:Subjects): string {
   if (todayClass === 'Math') {
     const res = 'Teaching Math';
     console.log(res);
