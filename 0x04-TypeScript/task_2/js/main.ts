@@ -60,9 +60,7 @@ export function createEmployee(salary: number | string): Director | Teacher {
 }
 
 // Example expected output
-console.log(createEmployee(200));
-console.log(createEmployee(1000));
-console.log(createEmployee('$500'));
+// (example object logs removed to match task expectations)
 
 // Part 6: isDirector and executeWork
 export function isDirector(employee: Director | Teacher): employee is Director {
